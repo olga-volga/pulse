@@ -1,0 +1,7 @@
+.button {
+    @media (max-width: $md6) {
+        &_main {
+            width: 100%;
+        }
+    }
+}

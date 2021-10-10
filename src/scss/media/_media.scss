@@ -1,0 +1,21 @@
+@media (max-width: $md1) {
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+}
+@media (max-width: $md3) {
+    .container {
+        padding: 0 30px;
+    }
+}
+@media (max-width: $md6) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@import '_media_header.scss';
+@import '_media_main.scss';
+@import '_media_buttons.scss';

@@ -1,3 +1,20 @@
 @import 'base/variables';
 
 /*font-family: 'MuseoModerno', cursive;*/
+
+* {
+    font-family: 'MuseoModerno', cursive;
+    font-style: normal;
+    margin: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+@import 'sections/main';
+@import 'sections/header';
+@import 'sections/buttons';
+
+@import 'media/media';

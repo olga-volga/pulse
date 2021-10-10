@@ -1,0 +1,43 @@
+.header {
+    @media (max-width: $md3) {
+        flex-wrap: wrap;
+
+        &__text {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        &__contacts {
+            flex: 1 1 100%;
+        }
+        &__phone {
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: $md4) {
+        flex-wrap: nowrap;
+
+        &__logo {
+            flex: 1;
+            img {
+                width: 90%;
+            }
+        }
+        &__text {
+            display: none;
+        }
+        &__contacts {
+            flex: 0 1 auto;
+        }
+    }
+    @media (max-width: $md6) {
+        flex-direction: column;
+        align-items: center;
+
+        &__logo {
+            margin-bottom: 10px;
+        }
+        &__contacts {
+            align-items: center;
+        }
+    }
+}
