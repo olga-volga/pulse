@@ -3,9 +3,11 @@
 /*font-family: 'MuseoModerno', cursive;*/
 
 * {
+    box-sizing: border-box;
     font-family: 'MuseoModerno', cursive;
     font-style: normal;
     margin: 0;
+    border: none;
 }
 
 .container {
@@ -17,5 +19,8 @@
 @import 'sections/header';
 @import 'sections/buttons';
 @import 'sections/advantages';
+@import 'sections/titles';
+@import 'sections/consultation';
+@import 'sections/forms';
 
 @import 'media/media';

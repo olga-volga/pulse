@@ -1,0 +1,16 @@
+.title {
+    @media (max-width: $md2) {
+        &_left {
+            text-align: center;
+        }
+    }
+    @media (max-width: $md3) {
+        &_left {
+            font-size: 30px;
+            line-height: 43px;
+            br {
+                display: none;
+            }
+        }
+    }
+}

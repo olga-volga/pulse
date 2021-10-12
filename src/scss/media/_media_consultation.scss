@@ -1,0 +1,11 @@
+.consultation {
+    @media (max-width: $md2) {
+        &__descr {
+            text-align: center;
+        }
+        &__form {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
