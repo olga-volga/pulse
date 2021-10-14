@@ -7,6 +7,7 @@
     font-family: 'MuseoModerno', cursive;
     font-style: normal;
     margin: 0;
+    padding: 0;
     border: none;
 }
 
@@ -23,5 +24,6 @@
 @import 'sections/consultation';
 @import 'sections/forms';
 @import 'sections/slider';
+@import 'sections/catalog';
 
 @import 'media/media';

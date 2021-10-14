@@ -1,0 +1,42 @@
+.catalog {
+    @media (max-width: $md2) {
+        &__tabs {
+            flex-wrap: wrap;
+            margin-bottom: -12px;
+        }
+        &__tab {
+            margin-bottom: 12px;
+        }
+    }
+    @media (max-width: $md6) {
+        &__content {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &__column {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &-item {
+            &__bottom {
+                flex-direction: column;
+            }
+            &__prices {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            &__new-price {
+                margin-top: 0;
+                margin-left: 10px;
+            }
+        }
+    }
+    @media (max-width: $md7) {
+        &-item {
+            width: calc(100vw - 40px);
+        }
+    }
+}
