@@ -8,4 +8,11 @@
             justify-content: center;
         }
     }
+    @media (max-width: $md6) {
+        &__descr {
+            br {
+                display: none;
+            }
+        }
+    }
 }

@@ -5,9 +5,11 @@
         }
     }
     @media (max-width: $md3) {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    @media (max-width: $minw) {
         &_left {
-            font-size: 30px;
-            line-height: 43px;
             br {
                 display: none;
             }
