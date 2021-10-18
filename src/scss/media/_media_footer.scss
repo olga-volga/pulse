@@ -1,0 +1,14 @@
+.footer {
+    @media (max-width: $md4) {
+        &__info {
+            width: 100%;
+            height: auto;
+            padding: 30px 20px;
+        }
+    }
+    @media (max-width: $md6) {
+        &__address {
+            line-height: 28px;
+        }
+    }
+}
