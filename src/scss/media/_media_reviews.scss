@@ -1,0 +1,23 @@
+.reviews {
+    @media (max-width: $md3) {
+        &-item {
+            display: block;
+
+            &__photo {
+                margin: 0 auto;
+            }
+            &__content {
+                margin-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &__name,
+            &__distance {
+                text-align: center;
+            }
+            &__descr {
+                text-align: justify;
+            }
+        }
+    }
+}
