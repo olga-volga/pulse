@@ -1,0 +1,57 @@
+.modal {
+    position: fixed;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0 20px;
+
+    &__dialog {
+        max-width: 382px;
+        margin: 40px auto;
+    }
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 402px;
+        background-color: #F2F2F2;
+        padding: 35px 40px 40px;
+
+        &_thanks {
+            min-height: 143px;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 0;
+        right: -41px;
+        font-weight: 700;
+        font-size: 41px;
+        line-height: 0.5;
+        color: $accent;
+        cursor: pointer;
+    }
+    &__subtitle {
+        font-weight: 700;
+        font-size: 18.5px;
+        line-height: 19px;
+        text-align: center;
+        color: $main;
+    }
+    &__descr {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        color: $main;
+        margin-top: 10px;
+    }
+    &__form {
+        width: 100%;
+        margin-top: 26px;
+    }
+}
