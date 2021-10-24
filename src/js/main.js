@@ -5,5 +5,5 @@ window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
     modals();
-    tabs();
+    tabs('.catalog__tabs', '.catalog__tab', '.catalog__content', 'catalog__tab_active');
 });
