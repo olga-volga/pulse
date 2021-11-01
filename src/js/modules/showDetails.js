@@ -1,16 +1,18 @@
-function showDetails() {
-    const link = document.querySelectorAll('.catalog-item__link'),
-          linkBack = document.querySelectorAll('.catalog-item__back'),
-          itemContent = document.querySelectorAll('.catalog-item__content'),
-          itemDetails = document.querySelectorAll('.catalog-item__details');
+function showDetails(linkSelector, linkBackSelector, itemContentSelector, itemDetailsSelector) {
+    const link = document.querySelectorAll(linkSelector),
+          linkBack = document.querySelectorAll(linkBackSelector),
+          itemContent = document.querySelectorAll(itemContentSelector),
+          itemDetails = document.querySelectorAll(itemDetailsSelector),
+          contentActiveClass = `${itemContentSelector.replace(/./, '')}_active`,
+          detailsActiveClass = `${itemDetailsSelector.replace(/./, '')}_active`;
 
     link.forEach((item, i) => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
 
             if (e.target == item) {
-                itemContent[i].classList.remove('catalog-item__content_active');
-                itemDetails[i].classList.add('catalog-item__details_active');
+                itemContent[i].classList.remove(contentActiveClass);
+                itemDetails[i].classList.add(detailsActiveClass);
             }
         });
     });
@@ -20,8 +22,8 @@ function showDetails() {
             e.preventDefault();
 
             if (e.target == item) {
-                itemDetails[i].classList.remove('catalog-item__details_active');
-                itemContent[i].classList.add('catalog-item__content_active');
+                itemDetails[i].classList.remove(detailsActiveClass);
+                itemContent[i].classList.add(contentActiveClass);
             }
         });
     });

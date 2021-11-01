@@ -84,22 +84,30 @@ function modals() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
-/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
-function showDetails() {
-  var link = document.querySelectorAll('.catalog-item__link'),
-      linkBack = document.querySelectorAll('.catalog-item__back'),
-      itemContent = document.querySelectorAll('.catalog-item__content'),
-      itemDetails = document.querySelectorAll('.catalog-item__details');
+
+
+function showDetails(linkSelector, linkBackSelector, itemContentSelector, itemDetailsSelector) {
+  var link = document.querySelectorAll(linkSelector),
+      linkBack = document.querySelectorAll(linkBackSelector),
+      itemContent = document.querySelectorAll(itemContentSelector),
+      itemDetails = document.querySelectorAll(itemDetailsSelector),
+      contentActiveClass = "".concat(itemContentSelector.replace(/./, ''), "_active"),
+      detailsActiveClass = "".concat(itemDetailsSelector.replace(/./, ''), "_active");
   link.forEach(function (item, i) {
     item.addEventListener('click', function (e) {
       e.preventDefault();
 
       if (e.target == item) {
-        itemContent[i].classList.remove('catalog-item__content_active');
-        itemDetails[i].classList.add('catalog-item__details_active');
+        itemContent[i].classList.remove(contentActiveClass);
+        itemDetails[i].classList.add(detailsActiveClass);
       }
     });
   });
@@ -108,8 +116,8 @@ function showDetails() {
       e.preventDefault();
 
       if (e.target == item) {
-        itemDetails[i].classList.remove('catalog-item__details_active');
-        itemContent[i].classList.add('catalog-item__content_active');
+        itemDetails[i].classList.remove(detailsActiveClass);
+        itemContent[i].classList.add(contentActiveClass);
       }
     });
   });
@@ -2776,7 +2784,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   (0,_modules_modals__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])('.catalog__tabs', '.catalog__tab', '.catalog__content', 'catalog__tab_active');
-  (0,_modules_showDetails__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_showDetails__WEBPACK_IMPORTED_MODULE_2__["default"])('.catalog-item__link', '.catalog-item__back', '.catalog-item__content', '.catalog-item__details');
 });
 }();
 /******/ })()

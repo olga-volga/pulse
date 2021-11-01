@@ -7,5 +7,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
     modals();
     tabs('.catalog__tabs', '.catalog__tab', '.catalog__content', 'catalog__tab_active');
-    showDetails();
+    showDetails('.catalog-item__link', '.catalog-item__back', '.catalog-item__content', '.catalog-item__details');
 });
