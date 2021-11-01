@@ -1,12 +1,14 @@
-function slider(wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSelector, nextBtnSelector) {
-    const slidesWrapper = document.querySelector(wrapperSelector),
+function slider(sliderSelector, wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSelector, nextBtnSelector) {
+    const slider = document.querySelector(sliderSelector),
+          slidesWrapper = document.querySelector(wrapperSelector),
           slidesWrapperInner = document.querySelector(wrapperInnerSelector),
           slideItem = document.querySelectorAll(slideSelector),
           prevBtn = document.querySelector(prevBtnSelector),
           nextBtn = document.querySelector(nextBtnSelector),
           sliderWidth = slidesWrapper.offsetWidth;
 
-    let offset = 0;
+    let offset = 0,
+        timerId;
 
     slidesWrapperInner.style.width = `${100 * slideItem.length}%`;
     slidesWrapperInner.style.display = 'flex';
@@ -21,7 +23,14 @@ function slider(wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSel
     function moveSlide(value) {
         slidesWrapperInner.style.transform = `translateX(-${value}px)`;
     }
+    function autoMoveSlide() {
+        timerId = setInterval(() => {
+            nextBtn.click();
+        }, 2000);
+    }
 
+    autoMoveSlide();
+    
     nextBtn.addEventListener('click', () => {
         if (offset == sliderWidth * (slideItem.length - 1)) {
             offset = 0;
@@ -38,6 +47,11 @@ function slider(wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSel
         }
         moveSlide(offset);
     });
+
+    slider.addEventListener('mouseenter', () => {
+        clearInterval(timerId);
+    });
+    slider.addEventListener('mouseleave', autoMoveSlide);
 }
 
 export default slider;
