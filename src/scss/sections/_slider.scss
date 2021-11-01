@@ -11,6 +11,9 @@
         justify-content: space-between;
         width: 100%;
     }
+    .arrow {
+        cursor: pointer;
+    }
     &__body {
         max-width: 750px;
         margin: 0 auto;
