@@ -1,9 +1,9 @@
-function slider() {
-    const slidesWrapper = document.querySelector('.slider__body'),
-          slidesWrapperInner = document.querySelector('.slider__inner'),
-          slideItem = document.querySelectorAll('.slider__item'),
-          prevBtn = document.querySelector('.arrow_prev'),
-          nextBtn = document.querySelector('.arrow_next'),
+function slider(wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSelector, nextBtnSelector) {
+    const slidesWrapper = document.querySelector(wrapperSelector),
+          slidesWrapperInner = document.querySelector(wrapperInnerSelector),
+          slideItem = document.querySelectorAll(slideSelector),
+          prevBtn = document.querySelector(prevBtnSelector),
+          nextBtn = document.querySelector(nextBtnSelector),
           sliderWidth = slidesWrapper.offsetWidth;
 
     let offset = 0;

@@ -139,12 +139,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
 
 
-function slider() {
-  var slidesWrapper = document.querySelector('.slider__body'),
-      slidesWrapperInner = document.querySelector('.slider__inner'),
-      slideItem = document.querySelectorAll('.slider__item'),
-      prevBtn = document.querySelector('.arrow_prev'),
-      nextBtn = document.querySelector('.arrow_next'),
+function slider(wrapperSelector, wrapperInnerSelector, slideSelector, prevBtnSelector, nextBtnSelector) {
+  var slidesWrapper = document.querySelector(wrapperSelector),
+      slidesWrapperInner = document.querySelector(wrapperInnerSelector),
+      slideItem = document.querySelectorAll(slideSelector),
+      prevBtn = document.querySelector(prevBtnSelector),
+      nextBtn = document.querySelector(nextBtnSelector),
       sliderWidth = slidesWrapper.offsetWidth;
   var offset = 0;
   slidesWrapperInner.style.width = "".concat(100 * slideItem.length, "%");
@@ -2843,7 +2843,7 @@ window.addEventListener('DOMContentLoaded', function () {
   (0,_modules_modals__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])('.catalog__tabs', '.catalog__tab', '.catalog__content', 'catalog__tab_active');
   (0,_modules_showDetails__WEBPACK_IMPORTED_MODULE_2__["default"])('.catalog-item__link', '.catalog-item__back', '.catalog-item__content', '.catalog-item__details');
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__["default"])('.slider__body', '.slider__inner', '.slider__item', '.arrow_prev', '.arrow_next');
 });
 }();
 /******/ })()
