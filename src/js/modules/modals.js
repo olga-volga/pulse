@@ -20,9 +20,8 @@ function closeModal(elem) {
 function modals() {
     let triggerClicked = false;
 
-    function bindModal(triggerSelector, modalSelector, closeSelector) {
-        const modal = document.querySelector(modalSelector),
-              close = document.querySelectorAll(closeSelector);
+    function bindModal(triggerSelector, modalSelector, closeClassSelector) {
+        const modal = document.querySelector(modalSelector);
 
         let trigger;
 
@@ -37,14 +36,9 @@ function modals() {
         } catch (err) {}
         
         modal.addEventListener('click', (e) => {
-            if (e.target === modal/* || e.target.classList.contains('modal__close')*/) {
+            if (e.target === modal || e.target.classList.contains(closeClassSelector)) {
                 closeModal(modal);
             }
-        });
-        close.forEach(item => {
-            item.addEventListener('click', () => {
-                closeModal(modal);
-            });
         });
     }
     function showModalByScroll(elemSelector) {
@@ -55,9 +49,9 @@ function modals() {
         });
     }
 
-    bindModal('.button-consultation', '#consultation', '.modal__close');
-    bindModal('.button_buy', '#order', '.modal__close');
-    bindModal('', '#thanks', '.modal__close');
+    bindModal('.button-consultation', '#consultation', 'modal__close');
+    bindModal('.button_buy', '#order', 'modal__close');
+    bindModal('', '#thanks', 'modal__close');
 
     showModalByScroll('.button-consultation');
 }
