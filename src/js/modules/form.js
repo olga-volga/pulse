@@ -1,14 +1,20 @@
+import {calcScrollWidth} from './modals';
+import {openModal} from './modals';
+import {closeModal} from './modals';
+
 function form() {
     const forms = document.querySelectorAll('form'),
-          inputs = document.querySelectorAll('input');
+          inputs = document.querySelectorAll('input'),
+          messageWindow = document.querySelector('#thanks'),
+          windows = document.querySelectorAll('.modal');
 
     const message = {
-        load: 'Идет отправка...',
-        success: "Отправлено!",
-        fail: "Произошла ошибка... Попробуйте позднее"
+        successTitle: "Спасибо за вашу заявку!",
+        successDescr: "Наш менеджер свяжется с вами в ближайшее время!",
+        failTitle: "Произошла ошибка...",
+        failDescr: "Попробуйте еще раз позднее"
     };
     const postData = async (url, data) => {
-        document.querySelector('.status').textContent = message.load;
         let result = await fetch(url, {
             method: 'POST',
             body: data
@@ -19,30 +25,40 @@ function form() {
         inputs.forEach(item => {
             item.value = '';
         });
-    }
+    };
+    const showStatusMessage = (title, descr, element) => {
+        const messageTitle = messageWindow.querySelector('.modal__subtitle'),
+              messageDescr = messageWindow.querySelector('.modal__descr');
+
+        windows.forEach(item => {
+            closeModal(item);
+        });
+        messageTitle.textContent = title;
+        messageDescr.textContent = descr;
+
+        openModal(element);
+    };
 
     forms.forEach(item => {
         item.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            let statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            item.append(statusMessage);
 
             const formData = new FormData(item);
 
             postData('php/server.php', formData)
                 .then(res => {
                     console.log(res);
-                    statusMessage.textContent = message.success;
+                    showStatusMessage(message.successTitle, message.successDescr, messageWindow);
                 })
                 .catch(() => {
-                    statusMessage.textContent = message.fail;
+                    showStatusMessage(message.failTitle, message.failDescr, messageWindow);
                 })
                 .finally(() => {
                     clearInput();
                     setTimeout(() => {
-                        statusMessage.remove();
+                        windows.forEach(item => {
+                            closeModal(item);
+                        });
                     }, 5000);
                 })
         });
