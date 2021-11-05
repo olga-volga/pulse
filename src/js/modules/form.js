@@ -2,7 +2,7 @@ import {calcScrollWidth} from './modals';
 import {openModal} from './modals';
 import {closeModal} from './modals';
 
-function form() {
+function form(orderData) {
     const forms = document.querySelectorAll('form'),
           inputs = document.querySelectorAll('input'),
           messageWindow = document.querySelector('#thanks'),
@@ -38,12 +38,23 @@ function form() {
 
         openModal(element);
     };
+    const clearOrder = () => {
+        for (let key in orderData) {
+            delete orderData[key];
+        }
+    };
 
     forms.forEach(item => {
         item.addEventListener('submit', (e) => {
             e.preventDefault();
 
             const formData = new FormData(item);
+
+            if (item.closest('#order')) {
+                for (let key in orderData) {
+                    formData.append(key, orderData[key]);
+                }
+            }
 
             postData('php/server.php', formData)
                 .then(res => {
@@ -55,6 +66,7 @@ function form() {
                 })
                 .finally(() => {
                     clearInput();
+                    clearOrder();
                     setTimeout(() => {
                         windows.forEach(item => {
                             closeModal(item);
