@@ -4,6 +4,8 @@ import showDetails from './modules/showDetails';
 import slider from './modules/slider';
 import form from './modules/form';
 import order from './modules/order';
+import checkNameInput from './modules/checkNameInput';
+import checkEmailInput from './modules/checkEmailInput';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -16,4 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
     slider('.slider__wrapper', '.slider__body', '.slider__inner', '.slider__item', '.arrow_prev', '.arrow_next');
     form(orderInfo);
     order(orderInfo);
+    checkNameInput('[name="name"]');
+    checkEmailInput('[name="email"]');
 });
