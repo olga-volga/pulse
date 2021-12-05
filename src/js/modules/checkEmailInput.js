@@ -3,7 +3,7 @@ function checkEmailInput(inputSelector) {
 
     emailInput.forEach(item => {
         item.addEventListener('input', () => {
-            item.value = item.value.replace(/[^a-z 0-9 @ .]/ig, '');
+            item.value = item.value.replace(/[^a-z 0-9 @ _ \. -]/ig, '');
         });
     });
 }
