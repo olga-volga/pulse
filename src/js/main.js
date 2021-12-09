@@ -7,6 +7,7 @@ import order from './modules/order';
 import checkNameInput from './modules/checkNameInput';
 import checkEmailInput from './modules/checkEmailInput';
 import scroll from './modules/scroll';
+import phoneMask from './modules/phoneMask';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -22,4 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
     checkNameInput('[name="name"]');
     checkEmailInput('[name="email"]');
     scroll('.pageup');
+    phoneMask('[name="phone"]');
 });
