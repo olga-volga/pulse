@@ -6,6 +6,7 @@ import form from './modules/form';
 import order from './modules/order';
 import checkNameInput from './modules/checkNameInput';
 import checkEmailInput from './modules/checkEmailInput';
+import scroll from './modules/scroll';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -20,4 +21,5 @@ window.addEventListener('DOMContentLoaded', () => {
     order(orderInfo);
     checkNameInput('[name="name"]');
     checkEmailInput('[name="email"]');
+    scroll('.pageup');
 });

@@ -18,6 +18,23 @@
     margin: 0 auto;
 }
 
+.pageup {
+    position: fixed;
+    bottom: 20%;
+    right: 5%;
+    width: 32px;
+    height: 32px;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    opacity: 0;
+    transition: 1s all;
+    img {
+        width: 100%;
+    }
+}
+
 @import 'sections/main';
 @import 'sections/header';
 @import 'sections/buttons';
