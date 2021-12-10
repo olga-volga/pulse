@@ -11,11 +11,17 @@ function openModal(elem) {
     elem.style.display = 'block';
     document.body.style.marginRight = `${calcScrollWidth()}px`;
     document.body.style.overflow = 'hidden';
+    try {
+        document.querySelector('.pageup').style.marginRight = `${calcScrollWidth()}px`;
+    } catch(err) {}
 }
 function closeModal(elem) {
     elem.style.display = 'none';
     document.body.style.marginRight = '0px';
     document.body.style.overflow = '';
+    try {
+        document.querySelector('.pageup').style.marginRight = '';
+    } catch(err) {}
 }
 function modals() {
     let triggerClicked = false;

@@ -1,6 +1,7 @@
 @import 'base/normalize';
 @import 'font/font';
 @import 'base/variables';
+@import 'base/animate';
 
 /*font-family: 'Museo Sans';*/
 
@@ -29,7 +30,7 @@
     border: 1px solid #fff;
     border-radius: 7px;
     opacity: 0;
-    transition: 1s all;
+    //transition: 1s all;
     img {
         width: 100%;
     }

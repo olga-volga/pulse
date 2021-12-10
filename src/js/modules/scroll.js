@@ -3,9 +3,11 @@ function scroll(pageupBtnSelector) {
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 700) {
-            pageupBtn.style.opacity = '1';
+			pageupBtn.classList.add('animate__animated', 'animate__fadeIn');
+			pageupBtn.classList.remove('animate__fadeOut');
         } else {
-            pageupBtn.style.opacity = '';
+			pageupBtn.classList.add('animate__fadeOut');
+			pageupBtn.classList.remove('animate__fadeIn');
         }
     });
 
