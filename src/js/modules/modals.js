@@ -8,6 +8,7 @@ function calcScrollWidth() {
     return scrollWidth;
 }
 function openModal(elem) {
+    elem.classList.add('animate__animated', 'animate__fadeIn');
     elem.style.display = 'block';
     document.body.style.marginRight = `${calcScrollWidth()}px`;
     document.body.style.overflow = 'hidden';

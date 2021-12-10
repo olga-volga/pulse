@@ -8,6 +8,7 @@ import checkNameInput from './modules/checkNameInput';
 import checkEmailInput from './modules/checkEmailInput';
 import scroll from './modules/scroll';
 import phoneMask from './modules/phoneMask';
+import reviews from './modules/reviews';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -24,4 +25,5 @@ window.addEventListener('DOMContentLoaded', () => {
     checkEmailInput('[name="email"]');
     scroll('.pageup');
     phoneMask('[name="phone"]');
+    reviews('.reviews-item');
 });

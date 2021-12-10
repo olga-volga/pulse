@@ -26,7 +26,7 @@ function slider(sliderSelector, wrapperSelector, wrapperInnerSelector, slideSele
     function autoMoveSlide() {
         timerId = setInterval(() => {
             nextBtn.click();
-        }, 2000);
+        }, 3000);
     }
 
     autoMoveSlide();

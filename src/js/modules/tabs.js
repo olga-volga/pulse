@@ -14,6 +14,7 @@ function tabs(tabParentSelector, tabHeaderSelector, tabContentSelector, activeCl
     function showTabContent(i = 0) {
         hideTabContent();
         tabContents[i].style.display = 'flex';
+        tabContents[i].classList.add('animate__animated', 'animate__fadeIn');
         tabHeaders[i].classList.add(activeClass);
     }
 
