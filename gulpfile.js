@@ -7,12 +7,15 @@ const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const webpack = require("webpack-stream");
+const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
 
 const dist = "dist/";
 //const dist = "C:/MAMP/htdocs/pulse";
 
 gulp.task('html', function() {
     return gulp.src("src/*.html")
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest(dist))
         .pipe(browserSync.stream());
 });
@@ -71,6 +74,7 @@ gulp.task('fonts', function() {
 
 gulp.task('images', function() {
     return gulp.src("src/img/**/*")
+        .pipe(imagemin())
         .pipe(gulp.dest(dist + "/img"));
 });
 
