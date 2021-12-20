@@ -8,8 +8,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const webpack = require("webpack-stream");
 
-//const dist = "dist/";
-const dist = "C:/MAMP/htdocs/pulse";
+const dist = "dist/";
+//const dist = "C:/MAMP/htdocs/pulse";
 
 gulp.task('html', function() {
     return gulp.src("src/*.html")

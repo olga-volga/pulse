@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="main">
+    <section id="up" class="main">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -43,7 +43,7 @@
                 </div>
                 <button class="button button_main button-consultation">заказать кОНСУЛЬТАЦИЮ</button>
                 <div class="main__link">
-                    или <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
+                    или <a href="#catalog">ПЕРЕЙТИ В КАТАЛОГ</a>
                 </div>
             </div>
         </div>
@@ -83,14 +83,14 @@
             <div class="consultation__form">
                 <form action="#" class="form">
                     <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="number" name="phone" placeholder="Ваш телефон" required>
+                    <input type="text" name="phone" placeholder="Ваш телефон" required>
                     <input type="email" name="email" placeholder="Ваш E-mail" required>
                     <button type="submit" class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
                 </form>
             </div>
         </div>
     </section>
-    <section class="slider">
+    <div class="slider">
         <div class="container">
             <div class="slider__wrapper">
                 <div class="arrows">
@@ -116,8 +116,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="catalog">
+    </div>
+    <section id="catalog" class="catalog">
         <div class="container">
             <h2 class="title">Каталог пульсометров</h2>
             <ul class="catalog__tabs">
@@ -426,7 +426,7 @@
         </div>
     </section>
     <footer class="footer">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1747.395298345064!2d37.645632003926025!3d55.76926757870607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a63664af129%3A0x32043f062d12723a!2z0JzRj9GB0L3QuNGG0LrQuNC5INC_0YAt0LQsIDMg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIDEwNzA3OA!5e0!3m2!1sru!2sru!4v1634533955327!5m2!1sru!2sru" width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1747.395298345064!2d37.645632003926025!3d55.76926757870607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a63664af129%3A0x32043f062d12723a!2z0JzRj9GB0L3QuNGG0LrQuNC5INC_0YAt0LQsIDMg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIDEwNzA3OA!5e0!3m2!1sru!2sru!4v1634533955327!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
         <div class="footer__info">
             <p class="footer__address">Москва, Мясницкий проезд, д.3с1</p>
             <a href="tel:84999228974" class="footer__phone">8 (499) 922-89-74</a>
@@ -459,7 +459,7 @@
                 <div class="modal__form">
                     <form action="#" class="form form_modal">
                         <input type="text" name="name" placeholder="Ваше имя" required>
-                        <input type="number" name="phone" placeholder="Ваш телефон" required>
+                        <input type="text" name="phone" placeholder="Ваш телефон" required>
                         <input type="email" name="email" placeholder="Ваш E-mail" required>
                         <button type="submit" class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
                     </form>
@@ -476,7 +476,7 @@
                 <div class="modal__form">
                     <form action="#" class="form form_modal">
                         <input type="text" name="name" placeholder="Ваше имя" required>
-                        <input type="number" name="phone" placeholder="Ваш телефон" required>
+                        <input type="text" name="phone" placeholder="Ваш телефон" required>
                         <input type="email" name="email" placeholder="Ваш E-mail" required>
                         <button type="submit" class="button button_submit">КУПИТЬ</button>
                     </form>
@@ -488,11 +488,14 @@
         <div class="modal__dialog">
             <div class="modal__content modal__content_thanks">
                 <div class="modal__close">&times;</div>
-                <h2 class="modal__subtitle">Спасибо за вашу заявку!</h2>
-                <p class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</p>
+                <h2 class="modal__subtitle">subtitle</h2>
+                <p class="modal__descr">descr</p>
             </div>
         </div>
     </div>
+    <a href="#up" class="pageup">
+        <img src="img/main/icons/pageup.png" alt="pageup">
+    </a>
     <script src="script.js"></script>
 </body>
 </html>
