@@ -8,6 +8,7 @@
         display: flex;
         margin-top: 60px;
         opacity: 0;
+        transition: 1s all;
         &:first-child {
             margin-top: 0;
         }

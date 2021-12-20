@@ -1,10 +1,10 @@
 function calcScrollWidth() {
     let div = document.createElement('div');
     div.style.cssText = 'width:50px;height:50px;overflow-y:scroll;visibility:hidden;';
-    document.body.append(div);
+    document.body.appendChild(div);
 
     let scrollWidth = div.offsetWidth - div.clientWidth;
-    div.remove();
+    document.body.removeChild(div);
     return scrollWidth;
 }
 function openModal(elem) {

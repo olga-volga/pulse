@@ -1,3 +1,5 @@
+import 'element-closest-polyfill';
+
 import modals from './modules/modals';
 import tabs from './modules/tabs';
 import showDetails from './modules/showDetails';

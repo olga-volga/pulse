@@ -2,12 +2,16 @@ function scroll(pageupBtnSelector) {
     const pageupBtn = document.querySelector(pageupBtnSelector);
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 700) {
+        if (window.pageYOffset > 700 || docElement.scrollTop > 700) {
 			pageupBtn.classList.add('animate__animated', 'animate__fadeIn');
 			pageupBtn.classList.remove('animate__fadeOut');
+			// for IE
+			pageupBtn.style.opacity = '1';
         } else {
 			pageupBtn.classList.add('animate__fadeOut');
 			pageupBtn.classList.remove('animate__fadeIn');
+			// for IE
+			pageupBtn.style.opacity = '';
         }
     });
 
@@ -36,7 +40,7 @@ function scroll(pageupBtnSelector) {
 					let progress = time - start,
 						pxToScroll = (elemToScroll < 0 ? Math.max(scrollTop - progress / speedScroll, scrollTop + elemToScroll) : Math.min(scrollTop + progress / speedScroll, scrollTop + elemToScroll));
 
-					docElement.scrollTo(0, pxToScroll);
+					window.scrollTo(0, pxToScroll);
 
 					if (pxToScroll != scrollTop + elemToScroll) {
 						requestAnimationFrame(step);

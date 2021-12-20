@@ -99,6 +99,7 @@
             margin-top: 15px;
         }
         &__descr {
+            width: 100%;// for IE
             font-weight: 300;
             font-size: 14px;
             line-height: 22px;
@@ -147,6 +148,7 @@
             margin-top: 5px;
         }
         &__list {
+            width: 100%;// for IE
             flex: 1;
             list-style-type: none;
             padding-left: 17px;
