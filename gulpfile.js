@@ -67,6 +67,11 @@ gulp.task('php', function() {
         .pipe(gulp.dest(dist + "/php"));
 });
 
+gulp.task('mailer', function() {
+    return gulp.src("src/mailer/**/*")
+        .pipe(gulp.dest(dist + "/mailer"));
+});
+
 gulp.task('fonts', function() {
     return gulp.src("src/fonts/**/*")
         .pipe(gulp.dest(dist + "/fonts"));
@@ -87,12 +92,13 @@ gulp.task("watch", function() {
     gulp.watch("src/*.html", gulp.parallel('html'));
     gulp.watch("src/scss/**/*.+(scss|css)", gulp.parallel('styles'));
     gulp.watch("src/php/*.php", gulp.parallel('php'));
+    gulp.watch("src/mailer/**/*", gulp.parallel('mailer'));
     gulp.watch("src/fonts/**/*", gulp.parallel('fonts'));
     gulp.watch("src/img/**/*", gulp.parallel('images'));
     gulp.watch("src/js/**/*.js", gulp.parallel('build-js'));
 });
 
-gulp.task('build', gulp.parallel('html', 'styles', 'php', 'fonts', 'images', 'build-js'));
+gulp.task('build', gulp.parallel('html', 'styles', 'php', 'mailer', 'fonts', 'images', 'build-js'));
 
 gulp.task('build-prod-js', function() {
     return gulp.src("src/js/main.js")

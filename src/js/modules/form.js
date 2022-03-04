@@ -56,7 +56,7 @@ function form(orderData) {
                 }
             }
 
-            postData('php/server.php', formData)
+            postData('mailer/smart.php', formData)
                 .then(res => {
                     console.log(res);
                     showStatusMessage(message.successTitle, message.successDescr, messageWindow);
